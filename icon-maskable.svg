@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14" />
+      <stop offset="45%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Glass Glow -->
+    <radialGradient id="centerGlowMask" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.4" />
+      <stop offset="50%" stop-color="#7c4dff" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 3D B Gradient -->
+    <linearGradient id="bGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="35%" stop-color="#00b4ff" />
+      <stop offset="70%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Specular Highlight -->
+    <linearGradient id="specularGradMask" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+    </linearGradient>
+
+    <filter id="neonGlowMask" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Full bleed background to ensure no white edges when masked -->
+  <rect width="512" height="512" fill="url(#bgGradMask)" />
+
+  <!-- Inner safe zone content scaled at center (256, 256) by 0.78 -->
+  <g transform="translate(256, 256) scale(0.78) translate(-256, -256)">
+    <!-- Central Ambient Aura -->
+    <circle cx="256" cy="256" r="180" fill="url(#centerGlowMask)" />
+
+    <!-- Circuit Lines -->
+    <path d="M 60 160 L 140 160 L 170 130" fill="none" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+    <circle cx="60" cy="160" r="7" fill="#00f0ff" />
+    
+    <path d="M 100 390 L 100 340 L 150 290" fill="none" stroke="#7c4dff" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+    <circle cx="100" cy="390" r="6" fill="#7c4dff" />
+
+    <path d="M 452 350 L 380 350 L 350 380" fill="none" stroke="#00f0ff" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+    <circle cx="452" cy="350" r="7" fill="#00f0ff" />
+
+    <!-- 3D "B" Symbol -->
+    <g filter="url(#neonGlowMask)">
+      <path d="M 170 115 H 295 C 360 115, 385 155, 385 195 C 385 230, 355 252, 330 256 C 370 262, 400 292, 400 340 C 400 395, 355 425, 290 425 H 170 C 158 425, 150 417, 150 405 V 135 C 150 123, 158 115, 170 115 Z" fill="url(#bGradMask)" />
+      
+      <path d="M 215 170 H 280 C 310 170, 325 185, 325 205 C 325 225, 310 238, 280 238 H 215 V 170 Z" fill="#090d16" />
+      <circle cx="270" cy="204" r="14" fill="#ffffff" opacity="0.95" />
+
+      <path d="M 215 285 H 288 C 322 285, 340 302, 340 326 C 340 350, 320 368, 288 368 H 215 V 285 Z" fill="#090d16" />
+      <circle cx="280" cy="326" r="16" fill="#00f0ff" opacity="0.95" />
+
+      <path d="M 170 115 H 295 C 360 115, 385 155, 385 195 C 385 225, 360 248, 330 255 L 150 255 V 135 C 150 123, 158 115, 170 115 Z" fill="url(#specularGradMask)" opacity="0.8" />
+    </g>
+
+    <ellipse cx="205" cy="140" rx="24" ry="7.5" fill="#ffffff" opacity="0.95" transform="rotate(-15, 205, 140)" />
+  </g>
+</svg>

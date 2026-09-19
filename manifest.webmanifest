@@ -1,0 +1,55 @@
+{
+  "id": "bluelogic-pwa-v5.3",
+  "name": "Blue Logic OS v5.3 — مدیریت مهندس امیررضا نریمانی",
+  "short_name": "Blue Logic v5.3",
+  "description": "سیستم عامل و پنل مدیریت شخصی مهندسی هوشمند نسخه ۵.۳ برای مهندس امیررضا نریمانی با همگام‌سازی ابری و هوش مصنوعی پیشرفته.",
+  "version": "5.3.0",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070b14",
+  "theme_color": "#070b14",
+  "lang": "fa",
+  "dir": "rtl",
+  "categories": ["productivity", "utilities", "education"],
+  "icons": [
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "pwa-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
+

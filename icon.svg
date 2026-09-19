@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#090d16" />
+      <stop offset="50%" stop-color="#0e172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <!-- Glass Glow -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00f0ff" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#7c4dff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- 3D B Gradient -->
+    <linearGradient id="bGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f0ff" />
+      <stop offset="35%" stop-color="#00a8ff" />
+      <stop offset="70%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+
+    <!-- Specular Highlight -->
+    <linearGradient id="specularGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Filters -->
+    <filter id="neonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="intenseGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="28" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Squircle Base -->
+  <rect x="16" y="16" width="480" height="480" rx="110" fill="url(#bgGrad)" stroke="rgba(0, 240, 255, 0.25)" stroke-width="3" />
+  
+  <!-- Subtle Grid & Circuit Traces -->
+  <circle cx="256" cy="256" r="160" fill="url(#centerGlow)" />
+  
+  <!-- Left Trace Line -->
+  <path d="M 80 160 L 150 160 L 170 140" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <circle cx="80" cy="160" r="6" fill="#00f0ff" />
+  
+  <path d="M 120 380 L 120 330 L 160 290" fill="none" stroke="#7c4dff" stroke-width="3" stroke-linecap="round" opacity="0.5" />
+  <circle cx="120" cy="380" r="5" fill="#7c4dff" />
+
+  <!-- Right Trace Line -->
+  <path d="M 432 340 L 370 340 L 340 370" fill="none" stroke="#00f0ff" stroke-width="3.5" stroke-linecap="round" opacity="0.6" />
+  <circle cx="432" cy="340" r="6" fill="#00f0ff" />
+
+  <!-- The 3D "B" Symbol -->
+  <g filter="url(#neonGlow)">
+    <!-- Back Glow Silhouette -->
+    <path d="M 170 115 H 295 C 360 115, 385 155, 385 195 C 385 230, 355 252, 330 256 C 370 262, 400 292, 400 340 C 400 395, 355 425, 290 425 H 170 C 158 425, 150 417, 150 405 V 135 C 150 123, 158 115, 170 115 Z" fill="url(#bGrad)" />
+    
+    <!-- Cutouts for B -->
+    <!-- Top inner hole -->
+    <path d="M 215 170 H 280 C 310 170, 325 185, 325 205 C 325 225, 310 238, 280 238 H 215 V 170 Z" fill="#090d16" />
+    <circle cx="270" cy="204" r="14" fill="#ffffff" opacity="0.9" />
+
+    <!-- Bottom inner hole -->
+    <path d="M 215 285 H 288 C 322 285, 340 302, 340 326 C 340 350, 320 368, 288 368 H 215 V 285 Z" fill="#090d16" />
+    <circle cx="280" cy="326" r="16" fill="#00f0ff" opacity="0.9" />
+
+    <!-- Glass Sheen Layer -->
+    <path d="M 170 115 H 295 C 360 115, 385 155, 385 195 C 385 225, 360 248, 330 255 L 150 255 V 135 C 150 123, 158 115, 170 115 Z" fill="url(#specularGrad)" opacity="0.75" />
+  </g>
+
+  <!-- Glossy Reflection Pill on Top Left -->
+  <ellipse cx="205" cy="140" rx="22" ry="7" fill="#ffffff" opacity="0.85" transform="rotate(-15, 205, 140)" />
+</svg>

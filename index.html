@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Blue Logic — مدیریت مهندس امیررضا نریمانی</title>
+    <meta name="description" content="یک سیستم مدیریت شخصی هوشمند برای مهندس امیررضا نریمانی جهت مدیریت پروژه‌ها، مهارت‌ها، وظایف، یادگیری و دستیار هوشمند مهندسی." />
+    <meta property="og:title" content="Blue Logic — مدیریت مهندس امیررضا نریمانی" />
+    <meta property="og:description" content="سیستم عامل مهندسی شخصی با طراحی iOS 27 Liquid Glass و قابلیت آفلاین PWA" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Favicon & PWA Icons -->
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="icon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon-32x32.png" />
+
+    <!-- iOS Safari Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="mask-icon" href="icon.svg" color="#00f0ff" />
+
+    <!-- Mobile & PWA Configuration -->
+    <meta name="theme-color" content="#070b14" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f5f8fc" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#070b14" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Blue Logic" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Blue Logic" />
+    <meta name="msapplication-TileColor" content="#070b14" />
+    <meta name="msapplication-TileImage" content="pwa-192x192.png" />
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Google Fonts: Vazirmatn, Space Grotesk, Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/blue-logic/assets/index-C-LYt_cb.js"></script>
+    <link rel="stylesheet" crossorigin href="/blue-logic/assets/index-D2Bw73x_.css">
+  </head>
+  <body class="bg-[#faf8ff] text-[#0f172a] select-none antialiased overflow-x-hidden">
+    <div id="root"></div>
+    <script>
+      if ('caches' in window) {
+        caches.keys().then(function(names) {
+          for (let name of names) {
+            if (name !== 'bluelogic-v5.3') {
+              caches.delete(name);
+            }
+          }
+        });
+      }
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('sw.js').then((reg) => {
+            reg.update();
+          }).catch(() => {});
+        });
+      }
+    </script>
+  </body>
+</html>
+
